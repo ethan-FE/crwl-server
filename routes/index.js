@@ -15,9 +15,9 @@ console.log("CRAWLER START");
   let browser, page;
   const doPuppeteer = {
     async open() {
-  browser = await puppeteer.launch({ headless: false }); // headless 브라우저 실행
+  browser = await puppeteer.launch({ headless: false }); // headless 
 
-  page = await browser.newPage(); // 새로운 페이지 열기
+  page = await browser.newPage(); //new page open
   await page.setViewport({
     width: 1920,
     height: 1080
@@ -29,13 +29,10 @@ console.log("CRAWLER START");
   await page.waitFor(100);
  // await page.waitForSelector('#__next > div > header > div.css-1jcgxc0 > div');
   await page.hover('#__next > div > header > div.css-1jcgxc0 > div');
-  // await page.hover('')
- // await page.waitFor(100);
- // await page.waitForSelector('div.css-13019sn > div:nth-child(28)');
+
   await page.click('div.css-13019sn > div:nth-child(29)');
   await page.waitForSelector('.SZUwG > span');
-  // await page.waitForSelector('body > div.82gpk3 > .4cffwv > div:nth-child(3) > .7jv6v2 > div:nth-child(28)');
-  // await page.click('body > div.82gpk3 > .4cffwv > div:nth-child(3) > .7jv6v2 > div:nth-child(28)');
+
 },
 async getText() {
   return page.evaluate(() => {
